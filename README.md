@@ -1,4 +1,4 @@
-# TOC Project 2020
+# ジョルダン 乗換案内
 A Line bot based on a finite state machine
 
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
@@ -43,47 +43,58 @@ You can either setup https server or using `ngrok` as a proxy.
 打任意文字之後，會從 `initial` 到 `start`
 * `start` : 選擇服務項目
 	* 顯示畫面: 
-	[start](./img/start.png)
-	* 點擊: "轉乘資訊"
-		* 進到下一個state `depart_arrive`
+		[start](./img/start.png)
+	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`
 		[depart_arrive](./img/depart_arrive.png)
-	* 點擊: "我要直接看網頁!"
-		* 開啟此程式主要應用web crawler的網頁
+	* 點擊: "我要直接看網頁!"，，開啟此程式主要應用web crawler的網頁
+
 * `depart_arrive` : 選擇查詢出發or抵達時間
 	* 顯示畫面: 
-	[depart_arrive](./img/depart_arrive.png)
-	* 點擊: "出發"
-		* 進到下一個state `time`
+		[depart_arrive2](./img/depart_arrive2.png)
+	* 點擊: "出發"，進到下一個state `time`
 		[depart](./img/depart.png)
-	* 點擊: "抵達"
-		* 進到下一個state `time`
+	* 點擊: "抵達"，，進到下一個state `time`
 		[arrive](./img/arrive.png)
+
 * `time` : 輸入欲查詢時間
 	* 顯示畫面:
-	[time](./img/time.png)
+		[time](./img/time.png)
 	* 點擊: "請選擇日期與時間"
-	[time_scroll](./img/time_scroll.png)
-	* 點擊: "傳送"
-		* 進到下一個state `station`
+		[time_scroll](./img/time_scroll.png)
+	* 點擊: "傳送"，進到下一個state `station`
 		[time_decide](./img/time_decide.png)
+
 * `station` : 輸入起訖站名
 	* 顯示畫面:
-	[station](./img/station.png)
-	* 輸入: 札幌 菊川 (敘述完整之兩站名)
-		* 經由state `get_station` 爬蟲判斷其完整後，進到下個state `show`
-	* 輸入: 弘明寺 東雲 (敘述不完整之兩站名)
-		* 經由state `get_station` 爬蟲判斷其不完整後，進到下個state `kouho`
+		[station](./img/station.png)
+	* 輸入: 札幌 菊川 (敘述完整之兩站名)，
+	經由state `get_station` 爬蟲判斷其完整後，進到下個state `show`
+		[complete](./img/complete.png)
+	* 輸入: 弘明寺 東雲 (敘述不完整之兩站名)，
+	經由state `get_station` 爬蟲判斷其不完整後，進到下個state `kouho`
+		[incomplete](./img/incomplete.png)
 
-	
+* `show` : 爬蟲並顯示轉乘資訊
+	* 顯示畫面:
+		[show](./img/show.png)
+		[show2](./img/show2.png)
+	* 點擊: "謝謝"，回到原本的state `start`
+		[thanks](./img/thanks.png)
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+* `kouho` :列出建議起迄站，供用戶選擇
+	* 顯示畫面:
+		[kouho]](./img/kouho.png)
+	* 選擇起訖站後，經 `tmp` `tmp2` 兩states，爬蟲並顯示轉乘資訊。
+		[show3](./img/show3.png)
+		[show4](./img/show4.png)
+	* 點擊: "謝謝"，回到原本的state `start`
+		[thanks2](./img/thanks2.png)
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
+```sh
+  所有state皆可藉由輸入"重新查詢"，回到state `start`
+  [restart](./img/restart.png)
+```
 
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
 
 ## Deploy
 Setting to deploy webhooks on Heroku.
