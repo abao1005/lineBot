@@ -44,7 +44,7 @@ You can either setup https server or using `ngrok` as a proxy.
 * `start` : 選擇服務項目。
 	* 顯示畫面: 
 		<div align="left">
-			<img src="./img/start.jpg" width="50">
+			<img src="./img/start.jpg" width="50%" height = "50%">
 		</div>
 	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`。
 		![depart_arrive](./img/depart_arrive.jpg)
