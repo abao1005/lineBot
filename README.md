@@ -43,7 +43,9 @@ You can either setup https server or using `ngrok` as a proxy.
 打任意文字之後，會從 `initial` 到 `start`
 * `start` : 選擇服務項目。
 	* 顯示畫面: 
-		![start](./img/start.jpg)
+		<div align="left">
+			<img src="./img/start.jpg" width="50">
+		</div>
 	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`。
 		![depart_arrive](./img/depart_arrive.jpg)
 	* 點擊: "我要直接看網頁!"，開啟此程式主要應用web crawler的網頁。
