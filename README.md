@@ -1,5 +1,5 @@
 # ジョルダン 乗換案内
-此lineBot可查詢日本境內之乘車資訊，交通工具含新幹線、JR、私鐵、地下鐵、路面電車。
+此lineBot可查詢日本境內之乘車資訊，交通工具主要含新幹線、JR、私鐵、地下鐵、路面電車、飛機等。
 參用網站: https://www.jorudan.co.jp/
 
 A Line bot based on a finite state machine
