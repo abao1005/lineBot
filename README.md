@@ -1,6 +1,8 @@
 # ジョルダン 乗換案内
-A Line bot based on a finite state machine
+此lineBot可查詢日本境內之乘車資訊，交通工具含新幹線、JR、私鐵、地下鐵、路面電車。
+參用網站: https://www.jorudan.co.jp/
 
+A Line bot based on a finite state machine
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
 
 ## Setup
