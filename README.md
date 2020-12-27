@@ -41,59 +41,59 @@ You can either setup https server or using `ngrok` as a proxy.
 ## Usage
 一開始的state是 `initial`，
 打任意文字之後，會從 `initial` 到 `start`
-* `start` : 選擇服務項目
+* `start` : 選擇服務項目。
 	* 顯示畫面: 
-		[start](./img/start.jpg)
-	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`
-		[depart_arrive](./img/depart_arrive.jpg)
-	* 點擊: "我要直接看網頁!"，，開啟此程式主要應用web crawler的網頁
+		![start](./img/start.jpg)
+	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`。
+		![depart_arrive](./img/depart_arrive.jpg)
+	* 點擊: "我要直接看網頁!"，開啟此程式主要應用web crawler的網頁。
 
 * `depart_arrive` : 選擇查詢出發or抵達時間
 	* 顯示畫面: 
-		[depart_arrive2](./img/depart_arrive2.jpg)
-	* 點擊: "出發"，進到下一個state `time`
-		[depart](./img/depart.jpg)
-	* 點擊: "抵達"，，進到下一個state `time`
-		[arrive](./img/arrive.jpg)
+		![depart_arrive2](./img/depart_arrive2.jpg)
+	* 點擊: "出發"，進到下一個state `time`。
+		![depart](./img/depart.jpg)
+	* 點擊: "抵達"，進到下一個state `time`。
+		![arrive](./img/arrive.jpg)
 
 * `time` : 輸入欲查詢時間
 	* 顯示畫面:
-		[time](./img/time.jpg)
-	* 點擊: "請選擇日期與時間"
-		[time_scroll](./img/time_scroll.jpg)
-	* 點擊: "傳送"，進到下一個state `station`
-		[time_decide](./img/time_decide.jpg)
+		![time](./img/time.jpg)
+	* 點擊: "請選擇日期與時間"。
+		![time_scroll](./img/time_scroll.jpg)
+	* 點擊: "傳送"，進到下一個state `station`。
+		![time_decide](./img/time_decide.jpg)
 
 * `station` : 輸入起訖站名
 	* 顯示畫面:
-		[station](./img/station.jpg)
+		![station](./img/station.jpg)
 	* 輸入: 札幌 菊川 (敘述完整之兩站名)，
-	經由state `get_station` 爬蟲判斷其完整後，進到下個state `show`
-		[complete](./img/complete.jpg)
+	經由state `get_station` 爬蟲判斷其完整後，進到下個state `show`。
+		![complete](./img/complete.jpg)
 	* 輸入: 弘明寺 東雲 (敘述不完整之兩站名)，
-	經由state `get_station` 爬蟲判斷其不完整後，進到下個state `kouho`
-		[incomplete](./img/incomplete.jpg)
+	經由state `get_station` 爬蟲判斷其不完整後，進到下個state `kouho`。
+		![incomplete](./img/incomplete.jpg)
 
 * `show` : 爬蟲並顯示轉乘資訊
 	* 顯示畫面:
-		[show](./img/show.jpg)
-		[show2](./img/show2.jpg)
-	* 點擊: "謝謝"，回到原本的state `start`
-		[thanks](./img/thanks.jpg)
+		![show](./img/show.jpg)
+		![show2](./img/show2.jpg)
+	* 點擊: "謝謝"，回到原本的state `start`。
+		![thanks](./img/thanks.jpg)
 
 * `kouho` :列出建議起迄站，供用戶選擇
 	* 顯示畫面:
-		[kouho]](./img/kouho.jpg)
+		![kouho]](./img/kouho.jpg)
 	* 選擇起訖站後，經 `tmp` `tmp2` 兩states，爬蟲並顯示轉乘資訊。
-		[show3](./img/show3.jpg)
-		[show4](./img/show4.jpg)
-	* 點擊: "謝謝"，回到原本的state `start`
-		[thanks2](./img/thanks2.jpg)
+		![show3](./img/show3.jpg)
+		![show4](./img/show4.jpg)
+	* 點擊: "謝謝"，回到原本的state `start`。
+		![thanks2](./img/thanks2.jpg)
 
 ```sh
-  所有state皆可藉由輸入"重新查詢"，回到state `start`
-  [restart](./img/restart.jpg)
+  所有state皆可藉由輸入"重新查詢"，回到state `start`。
 ```
+![restart](./img/restart.jpg)
 
 
 ## Deploy
