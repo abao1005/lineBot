@@ -129,7 +129,9 @@ You can either setup https server or using `ngrok` as a proxy.
 ```sh
   所有state皆可藉由輸入"重新查詢"，回到state `start`。
 ```
-![restart](./img/restart.jpg)
+<div align="left">
+	<img src="./img/restart.jpg" width="40%" height = "40%">
+</div>
 
 
 ## Deploy
@@ -197,10 +199,13 @@ sudo snap install --classic heroku
 	refference: https://hackmd.io/@ccw/B1Xw7E8kN?type=view#Q2-如何在-Heroku-使用-pygraphviz
 
 ## Reference
-[Pipenv](https://medium.com/@chihsuan/pipenv-更簡單-更快速的-python-套件管理工具-135a47e504f4) ❤️ [@chihsuan](https://github.com/chihsuan)
+https://github.com/NCKU-CCS/TOC-Project-2020/blob/master/README.md
 
-[TOC-Project-2019](https://github.com/winonecheng/TOC-Project-2019) ❤️ [@winonecheng](https://github.com/winonecheng)
+[Pipenv](https://medium.com/@chihsuan/pipenv-更簡單-更快速的-python-套件管理工具-135a47e504f4)  [@chihsuan](https://github.com/chihsuan)
 
-Flask Architecture ❤️ [@Sirius207](https://github.com/Sirius207)
+[TOC-Project-2019](https://github.com/winonecheng/TOC-Project-2019)  [@winonecheng](https://github.com/winonecheng)
+
+Flask Architecture  [@Sirius207](https://github.com/Sirius207)
 
 [Line line-bot-sdk-python](https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)
+
