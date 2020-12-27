@@ -103,7 +103,16 @@ A Line bot based on a finite state machine
 </div>
 
 
-## 
+## 程式特色
+
+
+## 心得
+此次計算理論課程之期末project讓我學習到非常多東西，了解到如何以FSM來控制程式流程、認識到如何製作一個LineBot聊天室、也學會了一些網路爬蟲的基礎。
+過往時常都是使用C++來寫學校功課，而此次作業因為大量接觸python，做完後我才更認識到他的功能之強大。
+程式中引用了許多套件，如linebot、beautifulsoup4等等，開發過程也使用了line developer的flex message simulator。以上種種方便好用的工具，都是前人辛苦開發的基業，能夠使用這些工具來寫程式，真的是我莫大的榮幸。寫程式的過程十分感動，總會想著:「如果沒有這些強大的工具該怎麼辦」。
+程式的主題也是自己很喜歡的主題，因為日本的交通網路非常複雜，所以想著如果有個程式可以輸入起點終點，就告訴用戶該怎麼走、如何轉乘，那就太好了。剛好，因緣際會發現了 https://www.jorudan.co.jp/ 這個網站，於是倚仗著他，我用網路爬蟲實現了這樣的一個聊天室。
+開發的過程中很有成就感，每完成一個小功能，看到lineBot有如想像中的回覆，就總能開心個好幾分鐘。
+
 ## Reference
 https://github.com/NCKU-CCS/TOC-Project-2020/blob/master/README.md
 https://www.youtube.com/watch?v=9Z9xKWfNo7k&ab_channel=%E5%BD%AD%E5%BD%AD%E7%9A%84%E8%AA%B2%E7%A8%8B
@@ -112,6 +121,7 @@ https://ithelp.ithome.com.tw/articles/10229719
 https://ithelp.ithome.com.tw/articles/10195640
 https://blog.gtwang.org/programming/python-beautiful-soup-module-scrape-web-pages-tutorial/2/
 https://www.jorudan.co.jp/
-of course https://stackoverflow.com/ <3
+https://developers.line.biz/flex-simulator/?status=success
+https://stackoverflow.com/ <3
 
 
