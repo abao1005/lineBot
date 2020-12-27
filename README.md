@@ -44,53 +44,87 @@ You can either setup https server or using `ngrok` as a proxy.
 * `start` : 選擇服務項目。
 	* 顯示畫面: 
 		<div align="left">
-			<img src="./img/start.jpg" width="50%" height = "50%">
+			<img src="./img/start.jpg" width="40%" height = "40%">
 		</div>
 	* 點擊: "轉乘資訊"，進到下一個state `depart_arrive`。
-		![depart_arrive](./img/depart_arrive.jpg)
+		<div align="left">
+			<img src="./img/depart_arrive.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "我要直接看網頁!"，開啟此程式主要應用web crawler的網頁。
 
 * `depart_arrive` : 選擇查詢出發or抵達時間
 	* 顯示畫面: 
-		![depart_arrive2](./img/depart_arrive2.jpg)
+		<div align="left">
+			<img src="./img/depart_arrive2.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "出發"，進到下一個state `time`。
-		![depart](./img/depart.jpg)
+		<div align="left">
+			<img src="./img/depart.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "抵達"，進到下一個state `time`。
-		![arrive](./img/arrive.jpg)
+		<div align="left">
+			<img src="./img/arrive.jpg" width="40%" height = "40%">
+		</div>
 
 * `time` : 輸入欲查詢時間
 	* 顯示畫面:
-		![time](./img/time.jpg)
+		<div align="left">
+			<img src="./img/time.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "請選擇日期與時間"。
-		![time_scroll](./img/time_scroll.jpg)
+		<div align="left">
+			<img src="./img/time_scroll.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "傳送"，進到下一個state `station`。
-		![time_decide](./img/time_decide.jpg)
+		<div align="left">
+			<img src="./img/time_decide.jpg" width="40%" height = "40%">
+		</div>
 
 * `station` : 輸入起訖站名
 	* 顯示畫面:
-		![station](./img/station.jpg)
+		<div align="left">
+			<img src="./img/station.jpg" width="40%" height = "40%">
+		</div>
 	* 輸入: 札幌 菊川 (敘述完整之兩站名)，
 	經由state `get_station` 爬蟲判斷其完整後，進到下個state `show`。
-		![complete](./img/complete.jpg)
+		<div align="left">
+			<img src="./img/complete.jpg" width="40%" height = "40%">
+		</div>
 	* 輸入: 弘明寺 東雲 (敘述不完整之兩站名)，
 	經由state `get_station` 爬蟲判斷其不完整後，進到下個state `kouho`。
-		![incomplete](./img/incomplete.jpg)
+		<div align="left">
+			<img src="./img/incomplete.jpg" width="40%" height = "40%">
+		</div>
 
 * `show` : 爬蟲並顯示轉乘資訊
 	* 顯示畫面:
-		![show](./img/show.jpg)
-		![show2](./img/show2.jpg)
+		<div align="left">
+			<img src="./img/show.jpg" width="40%" height = "40%">
+		</div>
+		<div align="left">
+			<img src="./img/show2.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "謝謝"，回到原本的state `start`。
-		![thanks](./img/thanks.jpg)
+		<div align="left">
+			<img src="./img/thanks.jpg" width="40%" height = "40%">
+		</div>
 
 * `kouho` :列出建議起迄站，供用戶選擇
 	* 顯示畫面:
-		![kouho]](./img/kouho.jpg)
+		<div align="left">
+			<img src="./img/kouho.jpg" width="40%" height = "40%">
+		</div>
 	* 選擇起訖站後，經 `tmp` `tmp2` 兩states，爬蟲並顯示轉乘資訊。
-		![show3](./img/show3.jpg)
-		![show4](./img/show4.jpg)
+		<div align="left">
+			<img src="./img/show3.jpg" width="40%" height = "40%">
+		</div>
+		<div align="left">
+			<img src="./img/show4.jpg" width="40%" height = "40%">
+		</div>
 	* 點擊: "謝謝"，回到原本的state `start`。
-		![thanks2](./img/thanks2.jpg)
+		<div align="left">
+			<img src="./img/thanks2.jpg" width="40%" height = "40%">
+		</div>
 
 ```sh
   所有state皆可藉由輸入"重新查詢"，回到state `start`。
