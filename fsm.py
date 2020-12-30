@@ -33,6 +33,10 @@ class TocMachine(GraphMachine):
             self.departure = 1
         return text == "出發" or text == "抵達"
 
+    def is_going_to_bonus(self, event):
+        text = event.message.text
+        return text == "加分state"
+
     def is_going_to_station(self, event):
         if event.postback.params["datetime"] != None:
             self.time = event.postback.params["datetime"]
@@ -96,6 +100,10 @@ class TocMachine(GraphMachine):
             return False
         else:
             return False
+
+    def on_enter_bonus(self, event):
+        reply_token = event.reply_token
+        send_text_message(reply_token, "謝謝助教!XD")
 
     def on_enter_tmp2(self, event):
         reply_token = event.reply_token
@@ -226,7 +234,7 @@ class TocMachine(GraphMachine):
                                 ],
                                 "flex": 0,
                                 "offsetStart": "-10px"
-                        },
+                                },
                         {
                                 "type": "text",
                                 "text": list_eki[0],
@@ -234,7 +242,7 @@ class TocMachine(GraphMachine):
                                 "flex": 4,
                                 "size": "sm",
                                 "offsetStart": "-15px"
-                        }
+                                }
                     ],
                     "spacing": "lg",
                     "cornerRadius": "30px",
@@ -298,7 +306,7 @@ class TocMachine(GraphMachine):
                                     }
                                 ],
                                 "width": "12px"
-                                },
+                            },
                         {
                                 "type": "box",
                                 "layout": "vertical",
@@ -316,7 +324,7 @@ class TocMachine(GraphMachine):
                                 ],
                                 "height": "70px",
                                 "width": "40px"
-                                },
+                            },
                         {
                                 "type": "box",
                                 "layout": "vertical",
@@ -334,7 +342,7 @@ class TocMachine(GraphMachine):
                                         "type": "filler"
                                     }
                                 ]
-                                }
+                            }
                     ],
                     "spacing": "lg",
                     "height": "70px"
@@ -369,7 +377,7 @@ class TocMachine(GraphMachine):
                                 ],
                                 "flex": 0,
                                 "offsetStart": "-10px"
-                            },
+                        },
                         {
                                 "type": "text",
                                 "text": list_eki[i+1],
@@ -377,7 +385,7 @@ class TocMachine(GraphMachine):
                                 "flex": 4,
                                 "size": "sm",
                                 "offsetStart": "-15px"
-                            }
+                        }
                     ],
                     "spacing": "lg",
                     "cornerRadius": "30px"
@@ -551,7 +559,7 @@ class TocMachine(GraphMachine):
                             ],
                             "flex": 0,
                             "offsetStart": "-10px"
-                    },
+                            },
                     {
                             "type": "text",
                             "text": list_eki[0],
@@ -559,7 +567,7 @@ class TocMachine(GraphMachine):
                             "flex": 4,
                             "size": "sm",
                             "offsetStart": "-15px"
-                    }
+                            }
                 ],
                 "spacing": "lg",
                 "cornerRadius": "30px",
@@ -623,7 +631,7 @@ class TocMachine(GraphMachine):
                                 }
                             ],
                             "width": "12px"
-                            },
+                        },
                     {
                             "type": "box",
                             "layout": "vertical",
@@ -641,7 +649,7 @@ class TocMachine(GraphMachine):
                             ],
                             "height": "70px",
                             "width": "40px"
-                            },
+                        },
                     {
                             "type": "box",
                             "layout": "vertical",
@@ -659,7 +667,7 @@ class TocMachine(GraphMachine):
                                     "type": "filler"
                                 }
                             ]
-                            }
+                        }
                 ],
                 "spacing": "lg",
                 "height": "70px"
@@ -694,7 +702,7 @@ class TocMachine(GraphMachine):
                             ],
                             "flex": 0,
                             "offsetStart": "-10px"
-                        },
+                    },
                     {
                             "type": "text",
                             "text": list_eki[i+1],
@@ -702,7 +710,7 @@ class TocMachine(GraphMachine):
                             "flex": 4,
                             "size": "sm",
                             "offsetStart": "-15px"
-                        }
+                    }
                 ],
                 "spacing": "lg",
                 "cornerRadius": "30px"

@@ -14,7 +14,7 @@ load_dotenv()
 
 machine = TocMachine(
     states=["initial", "start", "depart_or_arrive", "time",
-            "station", "get_station", "show", "kouho", "tmp", "tmp2"],
+            "station", "get_station", "show", "kouho", "tmp", "tmp2", "bonus"],
     transitions=[
         {
             "trigger": "go_start",
@@ -26,6 +26,12 @@ machine = TocMachine(
             "source": "start",
             "dest": "depart_or_arrive",
             "conditions": "is_going_to_depart_or_arrive",
+        },
+        {
+            "trigger": "advance",
+            "source": "start",
+            "dest": "bonus",
+            "conditions": "is_going_to_bonus",
         },
         {
             "trigger": "advance",
@@ -83,7 +89,7 @@ machine = TocMachine(
         },
         {
             "trigger": "restart",
-            "source": ["depart_or_arrive", "station", "time", "get_station", "kouho", "show", "start", "tmp", "tmp2"],
+            "source": ["bonus", "depart_or_arrive", "station", "time", "get_station", "kouho", "show", "start", "tmp", "tmp2"],
             "dest": "start",
             "conditions": "is_restart"
         }
@@ -177,7 +183,7 @@ def webhook_handler():
     return "OK"
 
 
-@app.route("/show-fsm", methods=["GET"])
+@app.route("/show_fsm", methods=["GET"])
 def show_fsm():
     machine.get_graph().draw("fsm.png", prog="dot", format="png")
     return send_file("fsm.png", mimetype="image/png")

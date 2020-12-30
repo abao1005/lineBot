@@ -86,7 +86,12 @@ def send_welcome_message(reply_token):
                 URITemplateAction(
                     label="我要直接看網頁!",
                     uri="https://www.jorudan.co.jp/"
-                )
+                ),
+                MessageTemplateAction(
+                    label="Bonus",
+                    text="加分state"
+                ),
+
 
                 # MessageTemplateAction(
                 #    label="抵達",
